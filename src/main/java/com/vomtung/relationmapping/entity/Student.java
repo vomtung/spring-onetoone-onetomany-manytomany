@@ -1,15 +1,21 @@
 package com.vomtung.relationmapping.entity;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,7 +27,7 @@ public class Student {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="student_id")
 	Long id;
 
 	@Column(name="student_name")
@@ -34,6 +40,12 @@ public class Student {
 	@Column(name="birthday")
 	@DateTimeFormat(style = "M-")
 	Date birthday;
+	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(	name="students_classes", 
+				joinColumns={@JoinColumn(name="student_id")},
+				inverseJoinColumns={@JoinColumn(name="class_id")})
+	Set<SchoolClass> classes;
 	
 	public Long getId() {
 		return id;
@@ -65,6 +77,14 @@ public class Student {
 
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
+	}
+
+	public Set<SchoolClass> getClasses() {
+		return classes;
+	}
+
+	public void setClasses(Set<SchoolClass> classes) {
+		this.classes = classes;
 	}
 	
 }

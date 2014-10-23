@@ -8,18 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="class")
-public class Class {
+@Table(name="car")
+public class Car {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="car_id")
 	Long id;
-	
-	@Column(name="class_name")
-	String className;
-	
-	String room;
 
 	public Long getId() {
 		return id;
@@ -29,20 +24,5 @@ public class Class {
 		this.id = id;
 	}
 
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
-	public String getRoom() {
-		return room;
-	}
-
-	public void setRoom(String room) {
-		this.room = room;
-	}
 	
 }

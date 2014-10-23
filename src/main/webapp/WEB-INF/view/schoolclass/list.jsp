@@ -6,5 +6,5 @@
 		<a href="${pageContext.servletContext.contextPath}/teacher">Teacher</a>
 		<a href="${pageContext.servletContext.contextPath}/vehicle">Vehicle</a>
 </p>
-Student list
-<a href="${pageContext.servletContext.contextPath}/student/addnew">Add new student</a>
+Class manament
+<a href="${pageContext.servletContext.contextPath}/class/addnew">Add new class</a>

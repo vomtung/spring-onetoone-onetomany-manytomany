@@ -8,12 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="vehicle")
-public class Vehicle {
+@Table(name="bicycle")
+public class Bicycle {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="bicycle_id")
 	Long id;
 
 	public Long getId() {

@@ -13,7 +13,7 @@ public class Room {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="room_id")
 	Long id;
 
 	public Long getId() {

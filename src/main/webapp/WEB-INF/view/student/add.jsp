@@ -12,6 +12,14 @@
 </head>
 <body>
 
+	<p>
+		<a href="${pageContext.servletContext.contextPath}/room">Room</a>
+		<a href="${pageContext.servletContext.contextPath}/class">Class</a>
+		<a href="${pageContext.servletContext.contextPath}/course">Course</a>
+		<a href="${pageContext.servletContext.contextPath}/student">Student</a>
+		<a href="${pageContext.servletContext.contextPath}/teacher">Teacher</a>
+		<a href="${pageContext.servletContext.contextPath}/vehicle">Vehicle</a>
+	</p>
 	<h5>Add new Student</h5>
 	<form:form method="post" commandName="student" action="addnew">
 	<table>
@@ -31,7 +39,6 @@
 				<form:input   path="sex"/>
 			</td>
 		</tr>
-		
 		<tr>
 			<td>
 				birthday    
@@ -40,7 +47,14 @@
 				<form:input   path="birthday"/>
 			</td>
 		</tr>
-		 
+		 <tr>
+			<td>
+				class    
+			</td>
+			<td>
+				<form:checkboxes items="${classList}" itemLabel="className" itemValue="id" path="classes" />
+			</td>
+		</tr>
 		<tr>
 			<td>
 				<input type="submit" value="Save"/>

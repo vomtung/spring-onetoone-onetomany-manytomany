@@ -13,7 +13,7 @@ public class Teacher {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="teacher_id")
 	Long id;
 
 	public Long getId() {
